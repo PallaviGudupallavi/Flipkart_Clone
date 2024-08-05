@@ -253,21 +253,30 @@ body {
 .twowheelers{
   right:15%;
 }
-
-.dropdownbox > div > div + div{
-  display: none;
-  position: absolute;
-  top:0%;
-  width:240px;
-  left: 100%;
-  box-shadow: 0 8px 8px 1px rgba(0, 0, 0, .3);
-  border-radius: 8px;
-  background-color: #fff;
-  line-height: 20px;
+.dropdownbox {
+  position: relative; /* Make sure the parent container is positioned relative */
 }
 
-.dropdownbox > div:hover > div + div{
+.dropdownbox > div > div + div {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 240px;
+  left: 100%;
+  box-shadow: 0 8px 8px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  background-color: #1d1c1c;
+  line-height: 20px;
+  transition: all 0.3s ease; /* Add transition for smooth effect */
+  z-index: 1000; /* Ensure dropdown is above other elements */
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-10px); /* Slightly move up to create slide-down effect */
+}
+
+.dropdownbox > div:hover > div + div {
   display: block;
+  opacity: 1; /* Show the dropdown */
+  transform: translateY(0); /* Slide into place */
 }
 
 .sidearrow{
